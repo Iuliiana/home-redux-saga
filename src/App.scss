@@ -1,0 +1,310 @@
+@import "assets/scss/constant";
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.vh-100 {
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+
+  li {
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    list-style: none;
+    font: bolder 1rem Arial, sans-serif;
+    color: black;
+  }
+
+  li:not(:last-child) {
+    margin-right: .5rem;
+  }
+
+  a {
+    display: block;
+  }
+
+  li:has(> a.active) {
+    background: $green;
+    color: aliceblue;
+  }
+}
+
+.wrapper {
+  max-width: 87.5rem;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 4.5rem;
+}
+
+.search-container {
+  max-width: 50rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .search-result {
+    width: 100%;
+
+    li {
+      list-style: square;
+      color: $crimson;
+
+      .text {
+        color: black;
+      }
+    }
+  }
+}
+
+.services-container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+table.services {
+  width: 100%;
+  text-align: left;
+  border: 1px solid $green;
+
+  caption {
+    margin-bottom: 2rem;
+    font: 700 2rem Arial, sans-serif;
+  }
+
+  th {
+    color: $green;
+  }
+
+
+  td a, th {
+    padding: 0.5rem;
+    border: 1px solid $green;
+  }
+
+  td:not(.link) {
+    border: 1px solid $green;
+  }
+
+  .link {
+    transition: .3s all;
+  }
+
+  .link:hover {
+    background-color: rgba(233, 30, 99, 0.1);
+  }
+
+  td > a {
+    display: block;
+  }
+
+  td > a:hover {
+    display: block;
+  }
+
+}
+
+.service-detail {
+  max-width: 50rem;
+  margin: 0 auto;
+
+  h5 {
+    font-size: 2rem;
+  }
+
+  h5 > b {
+    width: 5rem;
+    height: 5rem;
+    display: inline-block;
+    text-align: center;
+    line-height: 1.4;
+    font-size: 3rem;
+    border-radius: 50%;
+    border: 4px solid $green;
+  }
+
+  p {
+    font-size: 1.5rem;
+
+    span {
+      font-size: 2rem;
+    }
+  }
+}
+
+.news {
+  align-items: center;
+  padding-top: 5rem;
+
+  &-list {
+    max-width: 50rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &-item {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1.5rem #ccc6;
+    margin-bottom: 1rem;
+
+    &-header {
+      margin-bottom: 1rem;
+
+      &__icon {
+        width: 4rem;
+        height: 4rem;
+        margin-right: 1rem;
+      }
+
+      &__text {
+        padding-top: .5rem;
+        flex-direction: column;
+
+        h5 {
+          margin: 0 0 .3rem 0;
+        }
+
+        p {
+          margin: 0;
+          color: #989595;
+        }
+      }
+
+    }
+
+    &-description {
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    &-photo {
+      margin-bottom: 1rem;
+    }
+
+    &-img {
+      display: block;
+      position: relative;
+
+      img {
+        width: 100%;
+      }
+
+      button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 2.5rem;
+        height: 2rem;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        transition: 1.5s all;
+      }
+
+      button svg:hover {
+        fill: white;
+      }
+    }
+
+    &-video {
+      margin-bottom: 1rem;
+    }
+
+    &-link {
+      margin-bottom: 1rem;
+
+      img {
+        margin-bottom: 1rem;
+      }
+
+      &-description {
+        padding-left: .5rem;
+        border-left: 3px solid #989595;
+
+
+        h4 {
+          margin: 0 0 .5rem;
+          color: cornflowerblue;
+        }
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+
+    &-activity {
+
+      &-item {
+        display: flex;
+
+        ._icon {
+          margin-right: 0.2rem;
+          cursor: pointer;
+
+          svg {
+            width: 1.5rem;
+            height: 1.3rem;
+          }
+        }
+
+        ._icon:hover {
+          color: cornflowerblue;
+        }
+      }
+
+      &-item:not(:last-child) {
+        margin-right: 0.5rem;
+      }
+
+      &-item:last-child {
+        margin-left: auto;
+      }
+    }
+
+  }
+
+  &-item:last-child {
+    margin-bottom: 3rem;
+  }
+
+}
