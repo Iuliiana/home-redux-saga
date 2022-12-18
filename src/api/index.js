@@ -13,7 +13,6 @@ export const getServiceDetail = (serviceId) => {
 
 export const getNewsList = (lastNewsId) => {
     const params = lastNewsId ? `?${new URLSearchParams({lastSeenId: lastNewsId})}` : '';
-    console.log(params)
     return getJSON(`${process.env.REACT_APP_URL}/api/news${params}`);
 }
 

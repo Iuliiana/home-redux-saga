@@ -23,19 +23,21 @@ const ServicesDetail = () => {
 
 
     return (
-        <section className='services-container'>
+        <section className="services-container">
             {isLoading && <Preloader/>}
-            {!isLoading && (
-                error
-                    ? <Error {...error} type="restart" children="Повторить запрос" onClick={handleRestartQuery}/>
-                    : (!isEmpty(detail) && (
-                    <div className='service-detail'>
-                        <h5><b>{detail.id}</b> {' '} {detail.name} </h5>
-                        <p>{detail.content}</p>
-                        <p>Цена: <span>{detail.price}</span></p>
-                    </div> )) || <Notfound />
-                )
-            }
+
+            {!isLoading && error &&
+                <Error {...error} type="restart" children="Повторить запрос" onClick={handleRestartQuery}/>}
+
+            {!isLoading && !error && !isEmpty(detail) && (
+                <div className="service-detail">
+                    <h5><b>{detail.id}</b> {' '} {detail.name} </h5>
+                    <p>{detail.content}</p>
+                    <p>Цена: <span>{detail.price}</span></p>
+                </div>
+            )}
+
+            {!isLoading && !error && isEmpty(detail) && <Notfound/>}
         </section>
 
     );

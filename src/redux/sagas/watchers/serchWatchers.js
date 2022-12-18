@@ -8,7 +8,7 @@ function filterChangeSearchAction({type, payload}) {
 }
 
 export function* watchChangeSearchSaga() {
-    yield debounce(100, filterChangeSearchAction, handleChangeSearchSaga);
+    yield debounce(500, filterChangeSearchAction, handleChangeSearchSaga);
 }
 
 export function* watchSearchSkillsSaga() {
